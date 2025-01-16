@@ -1,0 +1,12 @@
+/src/packages
+bin/
+obj/
+Debug/
+Release/
+.idea/
+www/
+.vs/
+Logs/
+src/BestApp.Api/App_Data/Images/
+src/BestApp.Api/App_Data/Temp/
+/src/src/BestApp.Web.Host/App_Data/FileDownloads/TTSoft.PrinterService.msi
