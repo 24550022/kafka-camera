@@ -13,7 +13,7 @@ namespace ApacheKafkaService.Controllers
         {
             var config = new ProducerConfig
             {
-                BootstrapServers = "54.255.41.66:9092"
+                BootstrapServers = "18.136.197.247:9092"
             };
             _producer = new ProducerBuilder<string, byte[]>(config).Build();
         }

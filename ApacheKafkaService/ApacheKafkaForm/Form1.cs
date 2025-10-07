@@ -13,7 +13,7 @@ namespace ApacheKafkaForm
 
             var config = new ConsumerConfig
             {
-                BootstrapServers = "54.255.41.66:9092",
+                BootstrapServers = "18.136.197.247:9092",
                 GroupId = "winforms-consumer" + Guid.NewGuid(),
                 AutoOffsetReset = AutoOffsetReset.Latest
             };

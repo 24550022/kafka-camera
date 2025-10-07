@@ -37,14 +37,15 @@
 // ===========================
 // Enter your WiFi credentials
 // ===========================
-const char *ssid = "ITC";
-const char *password = "itc.edu.vn";
-// const char *ssid = "KhoaTran LAU";
-// const char *password = "Uongcocacola";
+// const char *ssid = "ITC";
+// const char *password = "itc.edu.vn";
+const char *ssid = "KhoaTran LAU";
+const char *password = "Uongcocacola";
 // const char *ssid = "TP-Link_F782";
 // const char *password = "71206004";
-
-const char* serverName = "http://54.255.41.66:5000/Home";  // .NET Core Gateway
+  
+HTTPClient http;
+const char* serverName = "http://18.136.197.247:5000/Home";  // .NET Core Gateway
 void startCameraServer();
 void setupLedFlash(int pin);
 
@@ -73,12 +74,14 @@ void setup() {
   config.pin_pwdn = PWDN_GPIO_NUM;
   config.pin_reset = RESET_GPIO_NUM;
   config.xclk_freq_hz = 20000000;
-  config.frame_size = FRAMESIZE_UXGA;
+  // config.frame_size = FRAMESIZE_UXGA;
+  config.frame_size = FRAMESIZE_QVGA;
   config.pixel_format = PIXFORMAT_JPEG;  // for streaming
   //config.pixel_format = PIXFORMAT_RGB565; // for face detection/recognition
   config.grab_mode = CAMERA_GRAB_WHEN_EMPTY;
   config.fb_location = CAMERA_FB_IN_PSRAM;
-  config.jpeg_quality = 12;
+  // config.jpeg_quality = 12;
+  config.jpeg_quality = 15;
   config.fb_count = 1;
 
   // if PSRAM IC present, init with UXGA resolution and higher JPEG quality
@@ -148,6 +151,10 @@ void setup() {
   }
   Serial.println("");
   Serial.println("WiFi connected");
+
+  http.begin(serverName);
+  http.addHeader("Content-Type", "image/jpeg");
+
   //Skip
   // startCameraServer();
 
@@ -169,13 +176,9 @@ void sendPhoto() {
     return;
   }
 
-  HTTPClient http;
-  http.begin(serverName);
-  http.addHeader("Content-Type", "image/jpeg");
-
   int httpResponseCode = http.POST(fb->buf, fb->len);
   Serial.println(httpResponseCode > 0 ? "Photo Sent!" : "Error sending photo");
-  http.end();
+  // http.end();
 
   esp_camera_fb_return(fb);
 }

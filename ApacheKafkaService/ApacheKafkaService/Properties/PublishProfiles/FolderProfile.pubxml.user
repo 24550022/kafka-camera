@@ -4,8 +4,8 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>C:\Users\trant\Documents\MyWork\Learn\ApacheKafkaService\ApacheKafkaService\bin\Release\net8.0\publish\</_PublishTargetUrl>
-    <History>True|2025-01-02T14:06:44.2592197Z||;True|2025-01-02T21:06:37.6101757+07:00||;True|2025-01-02T20:16:19.1162902+07:00||;</History>
+    <_PublishTargetUrl>C:\Users\khoat\Documents\Learn\kafka-camera\ApacheKafkaService\ApacheKafkaService\bin\Release\net8.0\publish\</_PublishTargetUrl>
+    <History>True|2025-10-06T13:00:38.6087564Z||;True|2025-01-02T21:06:44.2592197+07:00||;True|2025-01-02T21:06:37.6101757+07:00||;True|2025-01-02T20:16:19.1162902+07:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>
